@@ -5,6 +5,8 @@
 
 package clueGame; 
 
+//TODO remove unused
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -150,8 +152,8 @@ public class Board extends JPanel implements MouseListener{
 	 * for the program to find the correct path 
 	 */
 	public void setConfigFiles(String board, String setup) {
-		board = "data/" + board;
-		setup = "data/" + setup;
+		board = "ClueGame/data/" + board;
+		setup = "ClueGame/data/" + setup;
 		layoutConfigFile = board;
 		setupConfigFile = setup;
 	}
@@ -669,20 +671,22 @@ public class Board extends JPanel implements MouseListener{
 
 	/*
 	 * *************************************************************************************************************************************************
-	 * Player methods
+	 * Character methods
 	 * *************************************************************************************************************************************************
 	 */
 	public boolean checkAccusation(String string, String string2, String string3) {
 		if (solution.getPerson().getCardName() == string && solution.getRoom().getCardName() == string2 && solution.getWeapon().getCardName() == string3) {
 			return true;
 		}
+		JOptionPane.showMessageDialog(null, "You got the accusation wrong! The correct answer was " + solution.getPerson().getCardName() + " with the " + solution.getWeapon().getCardName() + ", in " + solution.getRoom().getCardName());
+		System.exit(0);
 		return false;
 	}
 
 	public Card handleSuggestion(Player suggestor, Card person, Card room, Card weapon) {
 		String playerInQuestion = person.getCardName();
 		
-		
+		//Moves suggested player to current player's location in room
 		for (Player x : players) {
 			if (x.getName() == playerInQuestion) {
 				x.setRow(suggestor.getRow());

@@ -216,9 +216,6 @@ public class GameControlPanel extends JPanel{
 
 						JOptionPane.showMessageDialog(null, msg);
 						System.exit(0);
-					} else if (!board.checkAccusation(board.getPlayers().get(0).getFinalPerson(), board.getPlayers().get(0).getFinalRoom(), board.getPlayers().get(0).getFinalWeapon())){
-						JOptionPane.showMessageDialog(null, "You got the accusation wrong! The correct answer was " + board.getPlayers().get(0).getFinalPerson() + " with the " + board.getPlayers().get(0).getFinalWeapon() + ", in " + board.getPlayers().get(0).getFinalRoom());
-						System.exit(0);
 					}
 				}
 				
@@ -310,6 +307,7 @@ public class GameControlPanel extends JPanel{
 				} else {
 					board.flagTargets();
 					board.setPlayerDone(false);
+					JOptionPane.showMessageDialog(null, "You rolled a " + roll);
 					board.repaint();
 					cPanel.revalidate();
 				}
