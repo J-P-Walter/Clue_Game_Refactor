@@ -1,7 +1,6 @@
 package clueGame;
 
 import java.awt.Color;
-import java.util.function.BooleanSupplier;
 
 public class HumanPlayer extends Player{
 	private boolean isHuman = true;
@@ -39,7 +38,6 @@ public class HumanPlayer extends Player{
 
 	@Override
 	protected boolean checkCards() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

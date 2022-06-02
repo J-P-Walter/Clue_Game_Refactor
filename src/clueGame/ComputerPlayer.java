@@ -2,7 +2,6 @@ package clueGame;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -163,13 +162,11 @@ public class ComputerPlayer extends Player{
 
 	@Override
 	protected boolean getIsFinished() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	protected void setIsFinished(boolean b) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -5,8 +5,6 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.function.BooleanSupplier;
-
 
 public abstract class Player {
 	private String name;
@@ -229,8 +227,6 @@ public abstract class Player {
 	public void setFlag() {
 		flag = true;
 	}
-
 	protected abstract boolean getIsFinished();
 	protected abstract void setIsFinished(boolean b);
-	
 }

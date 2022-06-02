@@ -1,18 +1,12 @@
 package clueGame;
 
-//TODO: remove unused imports
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class ClueGame extends JFrame{
 
 	private static Board board;
-	private ClueGame game;
 	private static JFrame frame;
 	
 	public ClueGame() {
@@ -60,11 +54,4 @@ public class ClueGame extends JFrame{
 	public static void main(String[] args) {
 		ClueGame game = new ClueGame();
 	}
-	//TODO FIX ENDING, REPLAY GAME?
-	//TODO Color coded cards from players
-	//TODO better color choices, looks brash right now
-	//TODO fix board background
-
-	//TODO Impliment AI?
-	
 }

@@ -1,13 +1,10 @@
 package clueGame;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import java.util.Set;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -29,7 +26,6 @@ public class GameControlPanel extends JPanel{
 	private JButton accuseButton = new JButton("Make Accusation");
 	private JButton nextTurn= new JButton("NEXT!");
 	private JPanel playerInfo = new JPanel();
-	private boolean humanFinished = false;
 	private CardPanel cPanel;
 
 	public GameControlPanel(Board board, CardPanel cPanel) {
@@ -179,11 +175,11 @@ public class GameControlPanel extends JPanel{
 	}
 
 	private class AccuseListener implements ActionListener {
-		JComboBox chooseRoom, choosePerson, chooseWeapon;
+		JComboBox<String> chooseRoom, choosePerson, chooseWeapon;
 		String aRoom, aPerson, aWeapon;
 		JFrame frame;
 
-		public AccuseListener(JComboBox person, JComboBox room, JComboBox weapon, JFrame frame) {
+		public AccuseListener(JComboBox<String> person, JComboBox<String> room, JComboBox<String> weapon, JFrame frame) {
 			this.choosePerson = person;
 			this.chooseRoom = room;
 			this.chooseWeapon = weapon;

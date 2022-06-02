@@ -5,13 +5,9 @@
 
 package clueGame;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Stroke;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -143,6 +139,8 @@ public class BoardCell {
 				g.drawLine(x, y-1 + height, x+width, y-1+ height);
 				g.drawLine(x, y-2 + height, x+width, y-2+ height);
 				g.drawLine(x, y-3 + height, x+width, y-3+ height);
+				break;
+			case NONE:
 				break;
 			}
 		}

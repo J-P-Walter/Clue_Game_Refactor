@@ -1,29 +1,20 @@
 package clueGame;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.List;
-
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 public class CardPanel extends JPanel{
-	private static Board board;
-	private static Player currPlayer;
 	private JPanel seenPanel;
 	private JPanel handPanel;
-	private JPanel cardSection;
 	private JPanel knownCards = new JPanel();
 
 	
 	public CardPanel(Player currPlayer) {
-		this.currPlayer = currPlayer;
 		setLayout(new GridLayout(1,1));
 		setPreferredSize(new Dimension(150,0));
 		knownCards.setLayout(new BoxLayout(knownCards, BoxLayout.Y_AXIS));
@@ -143,10 +134,6 @@ public class CardPanel extends JPanel{
 		seenPanel = seen;
 	}
 
-	public void setCurrPlayer(Player p) {
-		currPlayer = p;
-	}
-	
 	public JPanel getCardPanel() {
 		return knownCards;
 	}

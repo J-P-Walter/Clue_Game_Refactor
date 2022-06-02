@@ -5,15 +5,11 @@
 
 package clueGame; 
 
-//TODO remove unused
-
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +52,7 @@ public class Board extends JPanel implements MouseListener{
 	private List<Card> weaponsInPlay = new ArrayList<>();
 	private List<Card> playersInPlay = new ArrayList<>();
 	private List<BoardCell> allCells = new ArrayList<>();
-	private static int numColumns, numRows, totalCells;
+	private static int numColumns, numRows;
 	private String layoutConfigFile, setupConfigFile;
 	private Map<Character, Room> roomMap;
 	private Map<String, Card> roomNameToCardMap;
@@ -298,7 +294,6 @@ public class Board extends JPanel implements MouseListener{
 		numRows = roomRows.size();
 
 		grid = new BoardCell[numRows][numColumns];
-		totalCells = numRows * numColumns;
 		cellSetup();
 
 		for (int i = 0; i < numRows; i++) {
@@ -308,6 +303,7 @@ public class Board extends JPanel implements MouseListener{
 				walkwayAjd(i, j);
 			}
 		}
+		sc.close();
 	}
 
 
@@ -1015,16 +1011,16 @@ public class Board extends JPanel implements MouseListener{
 	}
 	
 	private class SuggestListener implements ActionListener{
-		JComboBox person;
+		JComboBox<String> person;
 		String room;
-		JComboBox weapon;
+		JComboBox<String> weapon;
 		JFrame frame;
 		Card sPerson;
 		Card sRoom;
 		Card sWeapon;
 
 		
-		public SuggestListener(JComboBox person, String room, JComboBox weapon, JFrame frame) {
+		public SuggestListener(JComboBox<String> person, String room, JComboBox<String> weapon, JFrame frame) {
 			this.person = person;
 			this.room = room;
 			this.weapon = weapon;
