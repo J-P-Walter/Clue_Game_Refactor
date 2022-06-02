@@ -238,6 +238,7 @@ public class GameControlPanel extends JPanel{
 		}
 	}
 
+	//Turn by turn of the game. Trigger is pressing the "next" button
 	private class NextListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -284,6 +285,7 @@ public class GameControlPanel extends JPanel{
 						if(target.isRoom()) {
 							Solution suggestion = currentPlayer.createSuggestion();
 
+							//Checks if AI has found the correct result
 							Card disprove = board.handleSuggestion(currentPlayer, suggestion.getPerson(), suggestion.getRoom(), suggestion.getWeapon());
 							if (disprove == null) {
 								currentPlayer.setFinalPerson(suggestion.getPerson().getCardName());
@@ -316,7 +318,6 @@ public class GameControlPanel extends JPanel{
 		}
 
 	}
-
 
 	public int roll() {
 		Random r = new Random();
