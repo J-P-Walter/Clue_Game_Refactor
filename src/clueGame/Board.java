@@ -4,7 +4,7 @@
  */
 
 package clueGame; 
-
+//Wow that's a lot of imports
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -145,11 +145,11 @@ public class Board extends JPanel implements MouseListener{
 
 	/*
 	 * Sets variables to file names, needed to add "data/"
-	 * for the program to find the correct path 
+	 * for the program to find the correct path
 	 */
 	public void setConfigFiles(String board, String setup) {
-		board = "ClueGame/data/" + board;
-		setup = "ClueGame/data/" + setup;
+		board = "E:/VS_CODE_PROJECTS/ClueGame/data/" + board;
+		setup = "E:/VS_CODE_PROJECTS/ClueGame/data/" + setup;
 		layoutConfigFile = board;
 		setupConfigFile = setup;
 	}
@@ -976,6 +976,7 @@ public class Board extends JPanel implements MouseListener{
 		}
 	}
 
+	//Highlights board cells that can be traveled to
 	public void flagTargets() {
 		if(targets.size() > 0) {
 			for(BoardCell x : targets) {

@@ -4,6 +4,12 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/*
+* *************************************************************************************************************************************************
+* Starts up the entire game. Creates the overall JFrame and puts in the control panel and card panel. Creates the board and initialzes it.
+* The board can be swapped out by changing the csv file and the setup file. Should throw errors if there are any but don't bet on it. 
+* *************************************************************************************************************************************************
+*/
 public class ClueGame extends JFrame{
 
 	private static Board board;
@@ -45,6 +51,7 @@ public class ClueGame extends JFrame{
 		JOptionPane.showMessageDialog(null, "You rolled a " + roll);
 	}
 	
+	//Not really sure why this is here...
 	public static void updateCardPanel() {
 		CardPanel cardPanel = new CardPanel(board.getPlayers().get(0));
 		frame.add(cardPanel, BorderLayout.EAST);
